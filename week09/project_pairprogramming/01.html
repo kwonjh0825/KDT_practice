@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box01{
+            border-width: 5px;
+            width: 900px;
+            height: fit-content;
+            margin: 0 auto;
+            border-style: solid;
+            border-color: #FF4500;
+        }
+
+        .img01 {
+            text-align: center;
+        }
+        .img01:hover {
+            transform: rotateY(180deg);
+        }
+        .style-box01 {
+            background-color: ghostwhite;
+            border: 1px solid cornflowerblue;
+            width: 880px; height: 20px;
+            color: black;
+            margin: 7px;
+        }
+        .font01 {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .underline01 {
+            text-decoration: underline;
+            text-decoration-style: solid;
+            text-underline-position: under;
+        }
+        .middleline01 {
+            border-bottom: 1px solid #FF4500;
+            margin: 20px auto;
+            width: 500px;
+        }
+        .middleline02 {
+            border-top: 1px solid #FF4500;
+            margin: 20px auto;
+            width: 500px;
+        }
+        .middleline01:after {
+            /* content: '\'; */
+            position: relative;
+            top: -20px;
+            left: calc( 50% - 8px);
+        }
+        .align-center {
+            text-align: center;
+        }
+        
+        .orange {
+            color: #FF4500;
+        }
+
+        .text-margin {
+            margin-left: 90px;
+            font-size: larger;
+        }
+        .spread-underline {
+            color: #333;
+            text-decoration: none;
+            /* display: inline-block; */
+            /* padding: 15px 0; */
+            position: relative;
+            width: fit-content;
+        }
+        .spread-underline:after {    
+            background: none repeat scroll 0 0 transparent;
+            bottom: 0;
+            content: "";
+            display: block;
+            height: 2px;
+            left: 50%;
+            position: absolute;
+            background: #FF4500;
+            transition: width 0.3s ease 0s, left 0.3s ease 0s;
+            width: 0;
+        }
+        .spread-underline:hover:after {
+            width: 100%;
+            left: 0px;
+        }
+        .name {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        .sub {
+            margin-top: 0px;
+            margin-bottom: 25px;
+        }
+        a {
+            color:#FF4500
+        }
+    </style>
+</head>
+<body>
+    <div class="box01 font01">
+        <div class="middleline01"></div>    
+            <div class="img01"><img src="danaka.jpg" alt="" width="400" height="500"></div>
+        <div class="middleline02"></div>    
+        <h1 class="align-center name">다나카 유키오</h1>
+        <p class="align-center sub">(田中雪男/たなかゆきお)</p>
+        <div class="text-margin">
+        <p class="spread-underline"><strong>출생</strong> : 1994년 4월 26일 (28세) / 도쿄도 신주쿠구 가부키초</p>
+        <p class="spread-underline"><strong>거주지</strong> : 서울특별시 마포구 연남동</p>
+        <p class="spread-underline"><strong>국적</strong> : 일본 <img src="japan.png" alt="japan" width="40px" height="26px"></p>
+        <p class="spread-underline"><strong>언어</strong> : 한국어, 일본어</p>
+        <p class="spread-underline"><strong>별명</strong> : 꼬ㅊ미남, 제비꼬ㅊ</p>
+        <p class="spread-underline"><strong>대표곡</strong> : <a href="https://www.youtube.com/watch?v=qs9vI-kc2Mk"><img src="youtubue_48.png" alt="youtube" width="25px" height="25px"></a>와스레나이 </p>
+        <p class="spread-underline"><strong>유행어</strong></p>
+        <ul>
+            <li class="spread-underline">오이시쿠나레 오이시쿠나레 <strong class="orange">모에모에뀽!</strong></li>
+            <li class="spread-underline">꼬ㅊ가루를 날려</li>
+            <li class="spread-underline">아~마~조루조루조루</li>
+            <li class="spread-underline">이...순신...!! 유카쨩 도망쳐..!!</li>
+            <li class="spread-underline">멀티캠퍼스가 있어 다나카가 있고 다나카가 있어 멀티캠퍼스가 이쒀</li>
+    </div>
+    </div>
+
+</body>
+</html>

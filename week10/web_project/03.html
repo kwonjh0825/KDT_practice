@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  * {
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+  }
+  .navbar {
+    border-bottom: 1px solid black;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    position: relative;
+    justify-content: flex-end;
+    padding: 0 1rem 5px;
+    top: 0;
+  }
+  .container {
+    position: relative;
+    display: flex; 
+    z-index: 0; 
+    justify-content: space-between;
+  } 
+  .create-account {
+    display: flex;
+  }
+  .login {
+    display: flex;
+  }
+  .classname {
+    flex-grow: 1;
+  }
+  .main-content {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+  }
+  .sidebar {
+    padding-bottom: 5px;
+    border-right: 1px solid black;
+    display: inline-block;
+    position: sticky;
+    width: 200px;
+    height: auto;
+    z-index: 1;
+    top: 0;
+    left:0;
+  }
+  .btn {
+    float: right;
+    width: 100px;
+    height: 50px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 3px 3px 3px gray;
+    transition-duration : 0.3;
+    text-align: center;
+    vertical-align: 50%;
+    
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    line-height: 50px;
+    text-decoration-color: black;
+  }
+  .btn:active {
+    margin-left: 5px;
+    margin-top: 5px;
+    box-shadow: none;
+  }
+  #left {
+    margin-left: 10px;
+  }
+  #right {
+    margin-right: auto;
+  }
+  footer {
+    font-style: italic;
+    color:gray;
+    margin: 1rem;
+    text-align: center;
+  }
+  .sidebar__list {
+    position: sticky;
+    list-style: none;
+    padding: 5px;
+  }
+  ul {
+    padding-left: 1rem;
+  }
+  .sticky {
+    top: 0;
+  }
+  img {
+    border-radius: 1rem;
+    margin: 1rem auto 0;
+  }
+  .card {
+    display: flex;
+    border-radius: 1rem;
+    width: 400px;
+    height: 700px;
+    margin-left: 5px;
+    margin-top: 5px;
+    box-shadow: none;
+    transition: background, 2s;
+    text-align: center;
+    flex-direction: column;
+    text-decoration-color: black;
+    font-size: 1.5rem;
+  }
+  .card:hover {
+    background: #3f3e3e;
+    color: #a7a5a5
+  }
+  .singer {
+    margin: 1rem 1rem 0;
+  }
+  .songname {
+    margin: 0.3rem 1rem 0;
+  }
+  .to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    border-radius: 5rem;
+    width: 70px;
+    height: 70px;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+</style>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <li class="sidebar__list"><img src="Spotify-Logo.png" alt="spotify" width="200px"><a href="https://open.spotify.com/"></a></li>
+      <ul>  
+        <li class="sidebar__list"><img src="house-solid.svg" alt="home" width="15px"> 홈</li>
+        <li class="sidebar__list"><img src="magnifying-glass-solid.svg" alt="search" width="15px"> 검색하기</li>
+        <li class="sidebar__list"><img src="bars-staggered-solid.svg" alt="library" width="15px"> 라이브러리</li>
+        <li class="sidebar__list"><img src="square-plus-regular.svg" alt="create_playlist" width="15px"> 플레이리스트 만들기</li>
+        <li class="sidebar__list"><img src="heart-regular.svg" alt="like" width="15px"> 좋아요 표시한 곡</li>
+      </ul>
+    </div>
+    <div class="classname">
+      <header class="navbar">
+        <div class="btn" id="left">왼쪽</div>
+        <div class="btn" id="right">오른쪽</div>
+        <div id="create-account" class="btn">
+        <a href="https://www.spotify.com/kr-ko/signup?forward_url=https%3A%2F%2Fopen.spotify.com%2F">가입하기</p></a>
+        </div>
+        <div id="login" class="btn">
+        <a href="https://accounts.spotify.com/ko/login?continue=https%3A%2F%2Fopen.spotify.com%2F">로그인하기</p></a>
+        </div>
+        </header>     
+    
+      <main>
+        <div class="main-content">
+          <div class="card">
+            <img src="omg.jpeg" alt="OMG" width="360px" height="360px">
+            <h2 class="singer">뉴진스</h2>
+            <h3 class="songname">OMG</h3>
+          </div>
+          <div class="card">
+            <img src="ditto.jpeg" alt="ditto" width="360px" height="360px">
+            <h2 class="singer">뉴진스</h2>
+            <h3 class="songname">Ditto</h3>
+          </div>
+          <div class="card">
+            <img src="hypeboy.jpeg" alt="hypeboy" width="360px" height="360px">
+            <h2 class="singer">뉴진스</h2>
+            <h3 class="songname">Hype boy</h3>
+          </div>
+
+          <div class="card">
+            <img src="event_horizon.jpeg" alt="event_horizon" width="360px" height="360px">
+            <h2 class="singer">윤하</h2>
+            <h3 class="songname">사건의 지평선</h3>
+          </div>
+
+          <div class="card">
+            <img src="antifragile.jpeg" alt="antifragile" width="360px" height="360px">
+            <h2 class="singer">Le sserafim</h2>
+            <h3 class="songname">Antifragile</h3>
+          </div>
+
+          <div class="card">
+            <img src="idontthinkthatilkerher.jpeg" alt="idontthinkthatilkerher" width="360px" height="360px">
+            <h2 class="singer">Charlie Puth</h2>
+            <h3 class="songname">I don't think that I like her</h3>
+          </div>
+
+          <div class="card">
+            <img src="afterlike.jpeg" alt="After Like" width="360px" height="360px">
+            <h2 class="singer">아이브</h2>
+            <h3 class="songname">After Like</h3>
+          </div>
+
+          <div class="card">
+            <img src="hypeboy.jpeg" alt="Attention" width="360px" height="360px">
+            <h2 class="singer">뉴진스</h2>
+            <h3 class="songname">Attention</h3>
+          </div>
+
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <footer>
+    이 문서는 권준혁, 이정일 두 명의 학생이 스포티파이 클론코딩을 실습한 파일임.
+  </footer>
+  <a href="#"><button class="to-top">top</button></a>
+</body>
+</html>

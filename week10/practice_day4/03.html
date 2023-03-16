@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      font-family: sans-serif;
+    }
+    .s23 {
+      display: flex;
+      flex-direction: column;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid black;
+      padding: 1rem;
+      align-items: center;
+    }
+    .navbar__logo {
+      width: 15%;
+      flex-basis: 200px;
+    }
+    .navbar__productname {
+      font-weight: bold;
+      font-size: 100%;
+    }
+    .product {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      flex-direction: row;
+    }
+    .product__explain {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      justify-content: center;
+      margin: 2rem;
+      text-align: center;
+      width: 250px;
+    }
+    .product__detail {
+      font-weight: bold;
+      margin: 1rem;
+      text-align: center;
+    }
+    .phone-img {
+      width: 40%;
+      align-self: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="s23">
+    <nav class="navbar">
+      <img class="navbar__logo" src="04.png" alt="hypergrowth">
+      <div class="navbar__productname">Hyper S23</div>
+    </nav>
+    <div class="product">
+      <div class="product__explain">
+        <h2>하이퍼 S23 Super</h2>
+        <img class="product__detail phone-img" src="03.png" alt="s23">
+        <div class="product__detail">몰입형 게임 최적화</div>
+        <div class="product__detail">화면 크기 <br> 173.1mm</div>
+        <div class="product__detail">3,088 x 1,440 <br> (Quad HD+ 엣지 디스플레이) </div>
+        <div class="product__detail">최대 밝기 <br> 1,750 니트</div>
+        <div class="product__detail">가변 주사율 <br> 1~120 Hz</div>
+      </div>
+      <div class="product__explain">
+        <h2>하이퍼 S23+</h2>
+        <img class="product__detail phone-img" src="03.png" alt="s23">
+        <div class="product__detail">야외에서도 뛰어난 선명도</div>
+        <div class="product__detail">화면 크기 <br> 173.1mm</div>
+        <div class="product__detail">2,340 x 1,080 <br> (FHD+ 엣지 디스플레이) </div>
+        <div class="product__detail">최대 밝기 <br> 1,750 니트</div>
+        <div class="product__detail">가변 주사율 <br> 48~120 Hz</div>
+      </div>
+      <div class="product__explain">
+        <h2>하이퍼 S23</h2>
+        <img class="product__detail phone-img" src="03.png" alt="s23">
+        <div class="product__detail">야외에서도 뛰어난 선명도</div>
+        <div class="product__detail">화면 크기 <br> 153.9mm</div>
+        <div class="product__detail">2,340 x 1,080 <br> (FHD+ 엣지 디스플레이) </div>
+        <div class="product__detail">최대 밝기 <br> 1,750 니트</div>
+        <div class="product__detail">가변 주사율 <br> 48~120 Hz</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

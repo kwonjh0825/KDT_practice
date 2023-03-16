@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=], initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 class="title heading">DOM 선택</h1>
+  <a href="https://google.com">google</a>
+  <p class="text">content1</p>
+  <p class="text">content2</p>
+  <p class="text">content3</p>
+  <ul>
+    <li>list1</li>
+    <li>list2</li>
+    <li>list3</li>
+  </ul>
+
+  <div></div>
+
+
+
+  <script>
+    // console.log('hello')
+    // DOM Query
+    // console.log(document.querySelector('.title'))
+    // console.log(document.querySelector('.text'))
+    // console.log(document.querySelectorAll('.text'))
+    // console.log(document.querySelectorAll('ul>li'))
+
+    // DOM Manipulation
+    
+    // 속성 조작
+    // const h1Tag = document.querySelector('h1')
+    // console.log(h1Tag.classList)
+
+    // h1Tag.classList.add('test')
+    // console.log(h1Tag.classList)
+
+    // h1Tag.classList.remove('test')
+    // console.log(h1Tag.classList)
+
+    // const aTag = document.querySelector('a')
+    // console.log(aTag)
+    // console.log(aTag.getAttribute('href'))
+
+    // aTag.setAttribute('href', 'https://www.naver.com')
+    // console.log(aTag)
+
+    // aTag.removeAttribute('href')
+    // console.log(aTag.getAttribute('href'))
+    
+    // html 컨텐츠 조작
+    // const h1Tag = document.querySelector('.heading')
+    // console.log(h1Tag.textContent)
+
+    // h1Tag.textContent = '컨텐츠 수정'
+    // console.log(h1Tag.textContent)
+
+    // tag 생성
+    // console.log(document.createElement('h1'))
+
+    // const h1Tag = document.createElement('h1')
+    // h1Tag.textContent = '제목'
+    // console.log(h1Tag)
+    // tag 추가
+    // const divTag = document.querySelector('div')
+    // divTag.appendChild(h1Tag)
+    // tag 삭제
+    // divTag.removeChild(h1Tag)
+
+    // style
+    const pTag = document.querySelector('p')
+    pTag.style.color = 'red'
+  </script>
+</body>
+</html>

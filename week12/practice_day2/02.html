@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+  <div id="original" class="container">
+    <div>
+      <div class="mb-3">
+        <label for="inputEmail" class="form-label">이메일</label>
+        <input type="email" class="form-control" id="inputEmail">
+      </div>
+      <div class="mb-3">
+        <label for="inputPassword" class="form-label">비밀번호</label>
+        <input type="password" class="form-control" id="inputPassword">
+      </div>
+      <div class="mb-3">
+        <button class="btn btn-primary" role="submit">로그인</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="copy" class="container">
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+</body>
+
+<script>
+  // div#original 과 동일한 DOM 생성 후 div#copy 의 자식 요소로 추가
+  const originalTag = document.createElement('div')
+  const copyTag = document.querySelector('#copy')
+  
+  copyTag.classList.add('container')
+  
+  const newDiv = document.createElement('div')
+
+  const emailDiv = document.createElement('div')
+  emailDiv.classList.add('mb-3')
+
+  const emailLabel = document.createElement('label')
+  emailLabel.classList.add('form-label')
+  emailLabel.setAttribute('for', 'inputEmail')
+  emailLabel.textContent = '이메일'
+
+  const emailInput = document.createElement('input')
+  emailInput.classList.add('form-control')
+  emailInput.setAttribute('type', 'email')
+  emailInput.setAttribute('id', 'inputEmail')
+
+  emailDiv.appendChild(emailLabel)
+  emailDiv.appendChild(emailInput)
+
+  const passwordDiv = document.createElement('div')
+  passwordDiv.classList.add('mb-3')
+
+  const passwordLabel = document.createElement('label')
+  passwordLabel.classList.add('form-label')
+  passwordLabel.setAttribute('for', 'inputPassword')
+  passwordLabel.textContent = '비밀번호'
+
+  const passwordInput = document.createElement('input')
+  passwordInput.classList.add('form-control')
+  passwordInput.setAttribute('type', 'password')
+  passwordInput.setAttribute('id', 'inputPassword')
+
+  passwordDiv.appendChild(passwordLabel)
+  passwordDiv.appendChild(passwordInput)
+
+  const buttonDiv = document.createElement('div')
+  buttonDiv.classList.add('mb-3')
+
+  const loginButton = document.createElement('button')
+  loginButton.classList.add('btn', 'btn-primary')
+  loginButton.setAttribute('role', 'submit')
+  loginButton.textContent = '로그인'
+
+  buttonDiv.appendChild(loginButton)
+
+  newDiv.appendChild(emailDiv)
+  newDiv.appendChild(passwordDiv)
+  newDiv.appendChild(buttonDiv)
+  copyTag.appendChild(newDiv)
+</script>
+
+</html>

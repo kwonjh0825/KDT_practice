@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      font-family: sans-serif;
+    }
+    .container {
+      background-color: lightgray;
+      padding: 0.5rem;
+      justify-items: flex-end;
+    }
+    .navbar {
+      position: sticky;
+      top: 0;
+      display: flex;
+      height: 100px;
+      background-color: lightgreen;
+      border-radius: 1rem;
+      justify-content: flex-end;
+      align-items: center;
+      margin: 1rem;
+    }
+    .navbar_box {
+      margin: 1rem;
+    }
+    .logo {
+      margin-left: 1%;
+      margin-right: auto;
+      flex-basis: 200px;
+    }
+    .navbar_text {
+      color: gray;
+      font-size: 2rem;
+      text-align: center;
+      flex-basis: 100px;
+    }
+    .content {
+      display: flex;
+      padding: 0.5rem;
+      justify-content: space-between;
+      margin: 1rem;
+      flex-direction: column;
+      background-color: whitesmoke;
+      border-radius: 1rem;
+    }
+    .content_box {
+      border: 1px dotted black;
+      border-radius: 1rem;
+      background-color: lightgoldenrodyellow;
+      margin: 1rem;
+      flex-basis: 150px;
+      padding: 1rem
+    }
+    .content_in_line {
+      display: flex;
+      flex-wrap: wrap;
+      border: 1px dotted black;
+      border-radius: 1rem;
+      background-color: lightgoldenrodyellow;
+      padding: 1rem;
+      justify-content: space-evenly;
+      margin: 1rem;
+      flex-direction: row;
+    }
+    .content_box_in_line {
+      border: 1px dashed black;
+      border-radius: 1rem;
+      background-color: lightcyan;
+      margin: 1rem;
+      flex-basis: 350px;
+      padding: 1rem;
+    }
+    footer {
+      border-radius: 0.7rem;
+      background-color: whitesmoke;
+      margin: 1rem;
+      font-style: italic;
+      color: gray;
+      padding: 0.5rem 1rem 0.5rem;
+    }
+    .button {
+      position: fixed;
+      width: 70px;
+      height: 5%;
+      right: 2%;
+    }
+    .top {
+      bottom: 10%;
+    }
+    .bottom {
+      bottom: 5%;
+    }
+  
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="navbar">
+      <img class="navbar_box logo" src="naver.png" alt="naver" width="200px">
+      <div class="navbar_box navbar_text">Sign in</div>
+      <div class="navbar_box navbar_text">Login</div>
+    </div>
+    <div class="content">
+      <div class="content_box">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, dicta!</div>
+      <div class="content_box">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo totam ad voluptas. Veritatis voluptas totam libero? Quidem vel suscipit amet. Maxime incidunt quod facilis veritatis, corrupti accusamus ex doloremque modi ullam minima officia amet blanditiis nostrum libero id quis necessitatibus aperiam qui commodi. Fugiat voluptas doloremque blanditiis ad nemo ipsa quibusdam perferendis illo, eum, perspiciatis, sunt beatae similique? Est aliquam officiis, iste facilis cupiditate labore illum perferendis? Veniam, explicabo eaque consectetur blanditiis vero at dignissimos eius minima, iste totam adipisci voluptate deserunt quaerat impedit iure cum dicta dolore aperiam voluptatem porro ad quidem. Sequi, nesciunt qui itaque accusantium iste odit incidunt eveniet, tenetur, eligendi placeat quisquam harum? Fuga, rem mollitia dicta error, quae quaerat officia tenetur hic incidunt maxime debitis. In totam dolorum pariatur recusandae nisi repellendus, doloremque ad quibusdam perferendis sed, quia eum eos nihil sit modi consectetur est iste rerum dolor quaerat repudiandae fugiat dicta expedita voluptates! Quaerat sequi aut corporis quibusdam harum, alias labore voluptates magnam doloremque praesentium tempora ad unde quisquam assumenda! Animi, quis odit nam cumque dolor excepturi eveniet vitae libero molestias debitis tempore consequatur consectetur beatae quam consequuntur quaerat laborum qui quo enim fugiat ut possimus dolores nulla! Tempora provident magni est quaerat? Cumque!</div>
+      <div class="content_box">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo totam ad voluptas. Veritatis voluptas totam libero? Quidem vel suscipit amet. Maxime incidunt quod facilis veritatis, corrupti accusamus ex doloremque modi ullam minima officia amet blanditiis nostrum libero id quis necessitatibus aperiam qui commodi. Fugiat voluptas doloremque blanditiis ad nemo ipsa quibusdam perferendis illo, eum, perspiciatis, sunt beatae similique? Est aliquam officiis, iste facilis cupiditate labore illum perferendis? Veniam, explicabo eaque consectetur blanditiis vero at dignissimos eius minima, iste totam adipisci voluptate deserunt quaerat impedit iure cum dicta dolore aperiam voluptatem porro ad quidem. Sequi, nesciunt qui itaque accusantium iste odit incidunt eveniet, tenetur, eligendi placeat quisquam harum? Fuga, rem mollitia dicta error, quae quaerat officia tenetur hic incidunt maxime debitis. In totam dolorum pariatur recusandae nisi repellendus, doloremque ad quibusdam perferendis sed, quia eum eos nihil sit modi consectetur est iste rerum dolor quaerat repudiandae fugiat dicta expedita voluptates! Quaerat sequi aut corporis quibusdam harum, alias labore voluptates magnam doloremque praesentium tempora ad unde quisquam assumenda! Animi, quis odit nam cumque dolor excepturi eveniet vitae libero molestias debitis tempore consequatur consectetur beatae quam consequuntur quaerat laborum qui quo enim fugiat ut possimus dolores nulla! Tempora provident magni est quaerat? Cumque!</div>
+      <div class="content_box">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo totam ad voluptas. Veritatis voluptas totam libero? Quidem vel suscipit amet. Maxime incidunt quod facilis veritatis, corrupti accusamus ex doloremque modi ullam minima officia amet blanditiis nostrum libero id quis necessitatibus aperiam qui commodi. Fugiat voluptas doloremque blanditiis ad nemo ipsa quibusdam perferendis illo, eum, perspiciatis, sunt beatae similique? Est aliquam officiis, iste facilis cupiditate labore illum perferendis? Veniam, explicabo eaque consectetur blanditiis vero at dignissimos eius minima, iste totam adipisci voluptate deserunt quaerat impedit iure cum dicta dolore aperiam voluptatem porro ad quidem. Sequi, nesciunt qui itaque accusantium iste odit incidunt eveniet, tenetur, eligendi placeat quisquam harum? Fuga, rem mollitia dicta error, quae quaerat officia tenetur hic incidunt maxime debitis. In totam dolorum pariatur recusandae nisi repellendus, doloremque ad quibusdam perferendis sed, quia eum eos nihil sit modi consectetur est iste rerum dolor quaerat repudiandae fugiat dicta expedita voluptates! Quaerat sequi aut corporis quibusdam harum, alias labore voluptates magnam doloremque praesentium tempora ad unde quisquam assumenda! Animi, quis odit nam cumque dolor excepturi eveniet vitae libero molestias debitis tempore consequatur consectetur beatae quam consequuntur quaerat laborum qui quo enim fugiat ut possimus dolores nulla! Tempora provident magni est quaerat? Cumque!</div>
+      <div class="content_in_line">
+        <div class="content_box_in_line">별을 우는 이국 무성할 가슴속에 벌레는 하늘에는 말 별빛이 있습니다. 가을로 차 지나가는 하나에 별에도 별 별 봅니다. 경, 그러나 잔디가 못 어머니, 있습니다. 어머님, 별을 노새, 봅니다. 내린 별이 걱정도 있습니다. 된 다하지 하나에 있습니다. 어머니, 패, 애기 별 때 청춘이 계십니다.</div>
+        <div class="content_box_in_line">어머니, 별 다 듯합니다. 때 릴케 못 비둘기, 이웃 그러나 까닭입니다. 위에 차 했던 언덕 나는 이국 이름을 강아지, 계십니다. 내린 이름자 차 하나에 무덤 이네들은 새겨지는 아직 계십니다. 오는 말 이런 벌레는 별 패, 위에 다하지 어머니, 듯합니다. 이제 피어나듯이 지나고 멀듯이, 새워 겨울이 당신은 듯합니다. 하나에 지나고 별 우는 아직 언덕 풀이 마리아 듯합니다.</div>
+        <div class="content_box_in_line">별 별 많은 것은 아스라히 토끼, 있습니다. 프랑시스 써 밤을 하나 풀이 무덤 하나에 다하지 때 까닭입니다. 까닭이요, 아직 덮어 거외다. 하나의 별에도 우는 둘 있습니다. 쓸쓸함과 남은 가득 이름과, 계십니다. 밤이 시와 풀이 이제 아침이 없이 있습니다.</div>
+      </div>
+    </div>
+    <a href="#"> <button class="button top" name="top">top</button></a>
+    <a href="#footer"> <button class="button bottom" name="top">bottom</button></a>
+    <footer id="footer">이 페이지는 2/28에 진행한 실습 파일임</footer>
+  </div>
+</body>
+</html>
