@@ -1,0 +1,5 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <p class="h2 text-center mt-3">오늘의 추천 저녁 메뉴는 <span class="text-danger-emphasis">{{ foods|random }}</span>입니다.</p>
+{% endblock content %}

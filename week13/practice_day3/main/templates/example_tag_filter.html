@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container m-1">
+    <p class="h1 mb-3">tag, filter examples</p>
+    
+    <p class="h2">defualt</p>
+    <div>
+      <p class="ms-2"> {{ text }} </p>
+      <p class="ms-2"> {{ none_text|default:"nothing" }} </p>
+    </div>
+    
+    <p class="h2">length</p>
+    <div>
+      <p class="ms-2"> {{ text|length }} </p>
+      <p class="ms-2"> {{ none_text|length }} </p>
+    </div>
+    
+    <p class="h2">upper, lower</p>
+    <div>
+      <p class="ms-2"> {{ text|upper }} </p>
+      <p class="ms-2"> {{ text|lower }} </p>
+    </div>
+    
+    <p class="h2">cut</p>
+    <div>
+      <p class="ms-2"> {{ text|cut:" "}}</p>
+    </div>
+    
+    <p class="h2">firstof</p>
+    <div>
+      -> 변수 중 가장 앞에 있는 True 값을 반환함
+      <p class="ms-2"> {% firstof none_text text "fallback value" %}</p>
+    </div>
+    
+    <p class="h2">truncatechars</p>
+    <p class="ms-2"> {{ text|truncatechars:"4" }} </p>
+
+    <p class="h2">wordcount</p>
+    <p class="ms-2">{{ text|wordcount }} </p>
+
+    <p class="h2">date</p>
+    <p class="ms-2">{{ date|date:"D d M Y" }} </p>
+
+    <p class="h2">make_list</p>
+    <p class="ms-2">{{ text|make_list }}</p>
+
+    <p class="h2">divisibleby</p>
+    <p class="ms-2">{{ 369|divisibleby:"3" }} </p>
+  </div>
+{% endblock content %}

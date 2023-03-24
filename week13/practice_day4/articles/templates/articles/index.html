@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <div>
+      <h2>number-print</h2>
+      <p><a href="{% url 'number_print:number_print' 1 %}" class="fs-1">1</a></p>
+      <p><a href="{% url 'number_print:number_print' 2 %}" class="fs-1">2</a></p>
+      <p><a href="{% url 'number_print:number_print' 3 %}" class="fs-1">3</a></p>
+      <p><a href="{% url 'number_print:number_print' 4 %}" class="fs-1">4</a></p>
+      <p><a href="{% url 'number_print:number_print' 5 %}" class="fs-1">5</a></p>
+      <p><a href="{% url 'number_print:number_print' 6 %}" class="fs-1">6</a></p>
+
+      {% for num in num_list %}
+        {% for n in num %}
+          <p><a href="{% url 'number_print:number_print' n %}" class="fs-1"> {{ n }} </a></p>  
+        {% endfor %}
+      {% endfor %}
+      
+    </div>
+    <div>
+      <h2>calculate</h2>
+    
+      <p><a href="{% url 'calculate:calculate' 10 2 %}" class="fs-1">10 2</a></p>
+      <p><a href="{% url 'calculate:calculate' 15 3 %}" class="fs-1">15 3</a></p>
+      <p><a href="{% url 'calculate:calculate' 21 7 %}" class="fs-1">21 7</a></p>
+      <p><a href="{% url 'calculate:calculate' 40 9 %}" class="fs-1">40 9</a></p> 
+    </div>
+  </div>  
+{% endblock content %}

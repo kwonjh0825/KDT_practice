@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container mt-3">
+  <p class="h3">로또 {{ number }}개 추첨 결과 입니다. </p>
+    {% for lotto in lottos %}
+      <p class="mb-1"> {{lotto}} </p>
+    {% endfor %}  
+    <a href="/lotto-create/">뒤로가기</a>
+  </div>
+{% endblock content %}
