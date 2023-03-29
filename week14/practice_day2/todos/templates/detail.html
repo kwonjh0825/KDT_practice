@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <h1>Detail</h1>
+
+    <h3>할 일: {{ todo.title }} </h3>
+    <p>상세정보: {{ todo.content }} </p>
+    <p>완료 여부: 
+      {% if todo.completed %}
+        완료
+      {% else %} 
+        미완료
+      {% endif %}</p>
+    <p>우선 순위: {{ todo.priority }} </p>
+    <p>생성 날짜: {{ todo.created_at }}</p>
+    <p>마감 기한: {{ todo.deadline }}</p>
+    <a href="{% url 'todos:index' %}"><button type="button" class="btn btn-primary">뒤로 가기</button></a>
+  </div>
+{% endblock content %}
