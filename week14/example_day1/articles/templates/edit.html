@@ -8,12 +8,13 @@
 </head>
 <body>
   <h1>New</h1>
-  <form action="{% url 'articles:create' %}" method='POST'>
+  <form action="{% url 'articles:update' article.pk %}" method='POST'>
     {% csrf_token %}
-    제목: <input type="text" name='title'><br>
-    내용: <input type="text" name='content'>
+    제목: <input type="text" name='title' value="{{ article.title }}"><br>
+    내용: <input type="text" name='content' value="{{ article.content }}">
     <input type="submit">
   </form>
-
+  <hr>
+  <a href="{% url 'articles:index' %}">[back]</a>
 </body>
 </html>

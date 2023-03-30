@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <h1>Edit</h1>
+    <form action="{% url 'todos:update' pk %}" method="POST">
+      {% csrf_token %}
+      <div class="col-4 mb-3">
+        <label for="newTitle" class="form-label">할 일 제목</label>
+        <input type="text" class="form-control" id="newTitle" name="title" value="{{ title }}">
+      </div>
+      <div class="col-4 mb-3">
+        <label for="newcontent" class="form-label">할 일 내용</label>
+        <input type="textarea" class="form-control" id="newcontent" name="content" value="{{ content}}">
+      </div>
+      <div class="col-4 mb-3">
+        <label for="newpriority" class="form-label">우선 순위</label>
+        <input type="number" class="form-control" id="newpriority" name="priority" min=1, max=5 value="{{ priority }}">
+      </div>
+      <div class="col-4 mb-3">
+        <label for="newdeadline" class="form-label">마감 기한</label>
+        <input type="date" class="form-control" id="newdeadline" name="deadline" value="{{ deadline|date:"Y-m-d" }}">
+      </div>
+      <input type="submit" class="btn btn-primary mb-3" value="수정 완료">
+    </form> 
+    <a href="{% url 'todos:detail' pk %}" class="btn btn-outline-primary">뒤로가기</a>
+  </div>
+{% endblock content %}

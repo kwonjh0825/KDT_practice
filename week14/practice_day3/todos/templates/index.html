@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <h1>Index</h1>
+    <a class="btn btn-outline-primary" href="{% url 'todos:new' %}">New</a>
+    <hr>
+    {% for todo in todos %}
+      <a href="{% url 'todos:detail' todo.pk %}"><h3>{{ todo.title }}</h3></a>
+      <p class="fs-5">완료 상태: 
+      {% if todo.completed %}
+        완료
+        <form action="{% url 'todos:toggle_completed' todo.pk %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-sm btn-primary">완료 취소</button>
+        </form>
+        
+      {% else %}
+        미완료
+        <form action="{% url 'todos:toggle_completed' todo.pk %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-sm btn-primary">완료하기</button>
+        </form>
+      {% endif %} 
+      </p>
+      <hr>
+    {% endfor %}
+
+  </div>
+{% endblock content %}

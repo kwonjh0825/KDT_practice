@@ -1,4 +1,4 @@
-"""crud URL Configuration
+"""practice3 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -16,13 +16,14 @@ Including another URLconf
 from django.urls import path
 from . import views
 
-app_name = 'articles'
+app_name = 'todos'
 urlpatterns = [
     path('', views.index, name='index'),
-    path('<int:pk>/', views.detail, name='detail'),
+    path('<int:todo_pk>', views.detail, name='detail'),
     path('new/', views.new, name='new'),
     path('create/', views.create, name='create'),
-    path('<int:pk>/delete/', views.delete, name='delete'),
-    path('<int:pk>/edit/', views.edit, name='edit'),
-    path('<int:pk>/update/', views.update, name='update'),
+    path('<int:todo_pk>/delete/', views.delete, name='delete'),
+    path('<int:todo_pk>/edit/', views.edit, name="edit"),
+    path('<int:todo_pk>/update/', views.update, name='update'),
+    path('<int:todo_pk>/toggle_completed/', views.toggle_completed, name="toggle_completed"),
 ]
