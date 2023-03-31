@@ -1,0 +1,78 @@
+{% extends 'accountbooks/base.html' %}
+
+{% block body %}
+<div class="container mt-5 text-center" style="width: 80%;">
+  <h1 class="mb-5">Account Book!</h1>
+  <div class = "d-flex justify-content-end mb-2">
+    <button class="btn btn-outline-dark btn-sm me-2" id="all"  name="ref" data-filter="전체">전체</button>
+    <button class="btn btn-outline-dark btn-sm me-2" id="eat"  name="ref" data-filter="식비">식비</button>
+    <button class="btn btn-outline-dark btn-sm me-2" id="looks"  name="ref" data-filter="품위유지비">품위유지비</button>
+    <button class="btn btn-outline-dark btn-sm me-2" id="deposit"  name="ref" data-filter="저축">저축</button>
+    <button class="btn btn-outline-dark btn-sm me-2" id="live"  name="ref" data-filter="주거비">주거비</button>
+    <button class="btn btn-outline-dark btn-sm me-2" id="trans"  name="ref" data-filter="교통비">교통비</button>
+    <button class="btn btn-outline-dark btn-sm me-2" id="culture"  name="ref" data-filter="문화생활비">문화생활비</button>
+  </div>
+  <table class="table table-hover m-auto mb-3" id="orderedTable">
+    {% comment %} <thead>
+      <tr class="table-dark">
+        <th scope="col" class="order" onclick="location.href='{% url 'accountbooks:order' 'note' %}'" style="cursor:pointer;">내용</th>
+        <th scope="col" class="order" style="width: 20%; cursor: pointer;" onclick="location.href='{% url 'accountbooks:order' 'category' %}'">분류</th>
+        <th scope="col" class="order" style="width: 20%; cursor: pointer;" onclick="location.href='{% url 'accountbooks:order' 'amount' %}'">사용 금액</th>
+        <th scope="col" class="order" style="width: 20%; cursor: pointer;" onclick="location.href='{% url 'accountbooks:order' 'date' %}'">사용 날짜</th>
+      </tr> 
+    </thead> {% endcomment %}
+    <thead>
+      <tr class="table-dark">
+        <th scope="col" class="order" onclick="sortTable('note')" style="cursor:pointer;">내용</th>
+        <th scope="col" class="order" onclick="sortTable('category')" style="width: 20%; cursor: pointer;" >분류</th>
+        <th scope="col" class="order" onclick="sortTable('amount')" style="width: 20%; cursor: pointer;" >사용 금액</th>
+        <th scope="col" class="order" onclick="sortTable('date')" style="width: 20%; cursor: pointer;" >사용 날짜</th>
+      </tr> 
+    </thead>
+    <tbody>
+      {% for accountbook in accountbooks %}
+        <tr>
+          <td scope="row" class="text-truncate data" onclick="location.href='{% url 'accountbooks:detail' accountbook.pk %}'" style="cursor:pointer;" data-type="{{ accountbook.category }}">{{ accountbook.note }}</td>
+          <td class="data {{ accountbook.category }}" data-type="{{ accountbook.category }}">{{ accountbook.category }}</td>
+          <td class="data" data-type="{{ accountbook.category }}">{{ accountbook.amount|floatformat:"g" }}</td>
+          <td class="data" data-type="{{ accountbook.category }}">{{ accountbook.date|date:"Y.m.d D" }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <div class="text-end">
+    <a class="btn btn-outline-dark" href="{% url 'accountbooks:new' %}">사용내역 추가</a>
+  </div>
+</div>
+{% endblock body %}
+
+{% block script %}
+const btn = document.querySelectorAll(".btn")
+const data = document.querySelectorAll(".data")
+
+btn.forEach(b=>b.addEventListener("click", (e) => {
+  const filter = e.target.dataset.filter;
+  
+  if (filter == null) {
+    return;
+  }
+  
+  data.forEach((project) => {
+    if (filter === "전체" || filter === project.dataset.type) {
+      project.style.removeProperty('display')
+    } else {
+      project.style.display = "none"
+    }
+  })
+}))
+
+
+
+function sortTable(orderBy) {
+  
+
+
+
+}
+
+{% endblock script %}
