@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container mt-3">
+    <h1>사용자 정보</h1>
+    <hr>
+    <p class="fs-4 fw-semibold">{{ user }}</p>
+    <hr>
+    {% if user.is_anonymous %}
+      <a href="{% url 'accounts:login' %}" class="btn btn-primary">로그인</a>
+    {% else %}
+      <form action="{% url 'accounts:logout' %}" method="POST">
+        {% csrf_token %}
+        <input type="submit" class="btn btn-outline-danger" value="로그아웃">
+      </form>
+    {% endif %}
+  </div>
+{% endblock content %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <h1>Index</h1>
+    <hr>
+    <a href="{% url 'todos:create' %}" class="btn btn-sm btn-primary">생성하기</a>
+    <hr>
+    {% for todo in todos %}
+      <a href="{% url 'todos:detail' todo.pk %}" class="fs-5">{{ todo.title }}</a>
+      <hr>
+    {% endfor %}
+  </div>
+{% endblock content %}

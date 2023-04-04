@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <h1>Detail</h1>
+    <hr>
+    <p>제목: {{ todo.title }}</p>
+    <p>내용: {{ todo.content }}</p>
+    <p>마감 날짜: {{ todo.deadline }}</p>
+    <a href="{% url 'todos:update' todo.pk %}" class="btn btn-primary mb-3">수정</a>
+    <form action="{% url 'todos:delete' todo.pk %}" method="POST">
+      {% csrf_token %}
+      <input type="submit" class="btn btn-danger mb-3" value="삭제"></input>
+    </form>
+    <a href="{% url 'todos:index' %}" class="btn btn-outline-primary mb-3">뒤로가기</a>
+  </div>
+{% endblock content %}
