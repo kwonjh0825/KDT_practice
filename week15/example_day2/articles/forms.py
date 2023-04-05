@@ -26,3 +26,4 @@ class ArticleForm(forms.ModelForm):
         fields = '__all__'
         # fields = ('content',)
         # exclude = ('title',)
+

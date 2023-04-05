@@ -1,4 +1,4 @@
-"""crud URL Configuration
+"""practice3 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -18,10 +18,11 @@ from . import views
 
 app_name = 'accounts'
 urlpatterns = [
+    path('', views.index, name='index'),
     path('login/', views.login, name='login'),
     path('logout/', views.logout, name='logout'),
     path('signup/', views.signup, name='signup'),
     path('delete/', views.delete, name='delete'),
     path('update/', views.update, name='update'),
-    path('password/', views.change_password, name='change_password'),
+    path('password/', views.change_password, name="change_password"),
 ]
