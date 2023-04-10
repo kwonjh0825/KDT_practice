@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<nav class="navbar sticky-top mb-2 bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand align-top" href="{% url 'album:index' %}"><img src="{% static 'images/logo.svg' %}" alt="Navbar" style="width: 10vw; margin-left: 1rem; margin-right: 1rem;"></a>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#imageModal">
+      이미지 공유
+    </button>
+  </div>
+</nav>
+<div class="container">
+  <div class="row gy-3">
+  {% for album in albums %}
+    <div class="col-12 col-sm-6 col-md-3">
+      <div class="card rounded">
+        {% if album.image %}
+        <img src="{{ album.image.url }}" alt="image" class="card-img-top">
+        {% else %}
+        <img src="{% static 'images/base.svg' %}" alt="base">
+        {% endif %}
+        <div class="card-body">
+          <p class="card-title">{{ album.content }}</p>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+</div>
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="imageModalLabel">이미지 공유</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form action="{% url 'album:create' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="modal-body">
+          {{form.as_p}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+          <input type="submit" class="btn btn-primary" value="이미지 저장">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content %}
