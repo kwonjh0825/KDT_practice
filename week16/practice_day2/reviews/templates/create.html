@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Create</h1>
+  <form action="{% url 'reviews:create' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <a href="{% url 'reviews:index' %}" class="btn btn-outline-danger btn-sm">인덱스로 가기</a>
+    <input type="submit" value="완료" class="btn btn-outline-primary btn-sm">
+  </form>
+{% endblock content %}
+
