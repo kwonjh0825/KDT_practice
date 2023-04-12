@@ -41,7 +41,7 @@ class ReviewForm(forms.ModelForm):
     
     class Meta:
         model = Review
-        fields = '__all__'
+        fields = ('title', 'content', 'movie', 'image',)
 
 
 class CommentForm(forms.ModelForm):
