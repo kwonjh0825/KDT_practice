@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <h1>Detail</h1>
+  <hr>
+  <p>글 번호 - {{ article.pk }}</p>
+  <p>작성자 - {{ article.user }}</p>
+  <p>후기 제목 - {{ article.title }}</p>
+  {% if article.image %}
+    <img src="{{ article.image.url }}" alt="{{ article.image }}">
+  {% endif %}
+  <p>후기 내용 - {{ article.content }}</p>
+  <p>영화 이름 - {{ article.movie }}</p>
+  <a href="{% url 'reviews:index' %}" class="btn btn-sm btn-outline-warning mb-3">인덱스로 가기</a>
+  {% if request.user == article.user %}
+    <form action="{% url 'reviews:delete' article.pk %}" method="POST">
+      {% csrf_token %}
+      <input type="submit" value="삭제하기" class="btn btn-sm btn-outline-danger mb-3">
+    </form>
+    <a href="{% url 'reviews:update' article.pk %}" class="btn btn-sm btn-outline-primary">수정하기</a>
+  {% endif %}
+  <p>좋아요 수 - {{ article.like_users.count }}</p>
+  <form action="{% url 'reviews:article_like' article.pk %}" method="POST">
+    {% csrf_token %}
+    {% if request.user.is_authenticated %}
+      {% if request.user in article.like_users.all %}
+        <input type="submit" value="좋아요 취소" class="btn btn-sm btn-outline-primary">
+      {% else %}
+        <input type="submit" value="좋아요" class="btn btn-sm btn-primary">
+      {% endif %}
+    {% else %}
+      <button disabled="disabled" class="btn btn-sm btn-primary">좋아요</button>      
+    {% endif %}
+  </form>
+  <hr>
+  <h3>댓글 목록</h3>
+  <p>댓글 수 - {{ comments_count }}</p>
+  {% for comment in comments %}
+    <hr>
+    <p>작성자 - {{ comment.user }}</p>
+    <p>좋아요 수 - {{ comment.like_users.count }}</p>
+    <p>{{ comment.content }}</p>
+    <form action="{% url 'reviews:comment_like' article.pk comment.pk %}" method="POST">
+      {% csrf_token %}
+      {% if request.user.is_authenticated %}
+        {% if request.user in comment.like_users.all %}
+          <input type="submit" class="btn btn-sm btn-outline-primary" value="좋아요 취소">        
+        {% else %}
+          <input type="submit" class="btn btn-sm btn-primary" value="좋아요">       
+        {% endif %}  
+      {% else %}
+        <button disabled="disabled" class="btn btn-sm btn-primary">좋아요</button>      
+      {% endif %}
+    </form>
+    {% if request.user == comment.user %}
+      <form action="{% url 'reviews:comment_delete' article.pk comment.pk %} " method="POST">
+        {% csrf_token %}
+        <input type="submit" value="댓글 삭제" class="btn btn-sm btn-outline-danger">
+      </form>
+    {% endif %}
+  {% empty %}
+    <p>댓글이 없습니다. 댓글을 작성해보세요. </p>
+  {% endfor %}
+  {% if request.user.is_authenticated %}
+    <form action="{% url 'reviews:comment_create' article.pk %}" method="POST" class="mt-3">
+      {% csrf_token %}
+      {{ comment_form.as_p }}
+      <input type="submit" value="댓글 작성" class="btn btn-sm btn-outline-primary">
+    </form>
+  {% endif %}
+{% endblock content %}

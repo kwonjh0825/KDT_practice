@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Index</h1>
+  {% if request.user.is_authenticated %}
+    <p>안녕하세요, {{ request.user }}님!</p>
+    <form action="{% url 'accounts:logout' %}" method="POST">
+      {% csrf_token %}
+      <input type="submit" class="btn btn-danger" value="로그아웃">
+    </form>
+  {% else %}
+    <a href="{% url 'accounts:login' %}" class="btn btn-primary">로그인</a>
+    <a href="{% url 'accounts:signup' %}" class="btn btn-outline-primary">회원가입</a>
+  {% endif %}
+  <hr>
+  <a href="{% url 'reviews:create' %}" class="btn btn-outline-primary mb-3">리뷰 쓰기</a>
+  <hr>
+  {% for article in articles %}
+    <h3><a href="{% url 'reviews:detail' article.pk %}">{{ article.title }}</a></h3>
+    <p>영화 - {{ article.movie }}</p>
+    <p>좋아요 수 - {{ article.like_users.count }}</p>
+    <hr>
+  {% endfor %}
+{% endblock content %}
