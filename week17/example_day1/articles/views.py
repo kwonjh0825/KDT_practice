@@ -104,3 +104,4 @@ def likes(request,article_pk):
         article.like_users.add(request.user)
 
     return redirect('articles:index')
+
